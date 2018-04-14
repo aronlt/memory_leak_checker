@@ -12,7 +12,7 @@
 >void start_hook();
 >void stop_hook();</br>
 
-对于大型的项目，底层会有大量的malloc调用，由于malloc_hook底层使用了libuwind来获取堆栈信息，所以会大幅度降低程序性能，</br>
+对于大型的项目，底层会有大量的malloc调用，由于malloc_hook底层使用了libuwind来获取堆栈信息，所以会大幅度降低程序性能.
 因此Memory Leak Checker支持按照一定区块来监控，示例代码见main文件。
 
 
