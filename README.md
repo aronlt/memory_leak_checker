@@ -25,6 +25,5 @@
 显式清理泄漏的内存
 
 ## 编译
-在build_dir目录下，执行cmake编译</br>
 如果你使用blade，我也为你写好了BUILD文件。</br>
-你也可以使用g++来编译
+你也可以使用g++来编译: g++ hash.cpp main.cpp mem_leak_checker.cpp stack_trace.cpp -lpthread  -lunwind -o main
