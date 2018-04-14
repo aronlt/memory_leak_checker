@@ -8,8 +8,8 @@
 
 初始化底层数据结构，在main函数的启动前调用。为了方便代码往c语言移植，我们并没有使用c++的面向对象特性来编写代码，所以移植到c语言非常方便。
 
->pthread_mutex_t* get_lock();
->void start_hook();
+>pthread_mutex_t* get_lock(); </br>
+>void start_hook();</br>
 >void stop_hook();</br>
 
 对于大型的项目，底层会有大量的malloc调用，由于malloc_hook底层使用了libuwind来获取堆栈信息，所以会大幅度降低程序性能.
