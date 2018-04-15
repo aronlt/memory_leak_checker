@@ -34,7 +34,7 @@ int __attribute__((noinline)) backtrace(char* stacks[], int stack_len) {
     if (p == NULL) {
         return n;
     }
-    sprintf(p, "#%-2d" PRIxPTR "%s + 0x%" PRIxPTR "\n",
+    sprintf(p, "#%-2d %s + 0x%" PRIxPTR "\n",
         n,
         name,
         static_cast<uintptr_t>(off));
