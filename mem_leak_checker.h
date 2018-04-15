@@ -14,12 +14,12 @@ extern "C" {
 #include<pthread.h>
 
 
-pthread_mutex_t* get_lock();
-void start_hook();
-void stop_hook();
-void mem_leak_checker_init();
-void mem_leak_checker_detail();
-void mem_leak_checker_clear();
+    pthread_mutex_t* get_lock();
+    void start_hook();
+    void stop_hook();
+    void mem_leak_checker_init();
+    void mem_leak_checker_detail();
+    void mem_leak_checker_clear();
 
 #ifdef __cplusplus
 }

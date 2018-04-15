@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
     if(rc2 != 0)
         fprintf(stderr, "%s: %d\n",__func__, strerror(rc2));
 
-    int rc1 = pthread_create(&tid1, NULL, malloc_without_free_thread, &tid2);
+    int rc1 = pthread_create(&tid1, NULL, malloc_without_free_thread, NULL);
     if(rc1 != 0)
         printf("%s: %d\n",__func__, strerror(rc1));
 
