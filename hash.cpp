@@ -18,9 +18,10 @@ static int find(size_t address, size_t* found_pos) {
         }
         pos = step_forward(pos);
 		if (pos == check_pos) {
-			break;
+			return -1;
 		}
     }
+	
     DEBUG_PRINT("find address:%lu pos:%lu, is found:%d\n", address, pos, found);
 	*found_pos = pos;
     return found;
