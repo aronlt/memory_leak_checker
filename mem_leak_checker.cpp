@@ -103,15 +103,11 @@ static void *malloc_hook(size_t size, const void *caller) {
 static void free_hook (void *ptr, const void *caller) {
     pthread_mutex_lock(&mlock);
     set_hook(malloc_hook_backup, free_hook_backup);
-    if (hook_flag == 0) {
-        free(ptr);
-    } else {
-        if (ptr != NULL) {
-            DEBUG_PRINT("in free hook, start to clear hash table\n");
-            clear_hash_table((size_t) ptr);
-        }
-        free (ptr);
+    if (ptr != NULL) {
+        DEBUG_PRINT("in free hook, start to clear hash table\n");
+        clear_hash_table((size_t) ptr);
     }
+    free (ptr);
     save_hook(malloc_hook_backup, free_hook_backup);
     set_hook(malloc_hook, free_hook);
     pthread_mutex_unlock(&mlock);
